@@ -1,12 +1,14 @@
 library(shiny)
-library(bslib)
 library(ggplot2)
 library(datasets)
-library(logger)
+library(shiny.telemetry)
 
-log_appender(appender_file("log"))
+# Initialize telemetry object
+telemetry <- Telemetry$new()
 
 ui <- page_fluid(
+  # Add telemetry JS dependencies
+  use_telemetry(),
   titlePanel("Iris Dataset Visualization"),
   sidebarLayout(
     sidebarPanel(
@@ -21,20 +23,13 @@ ui <- page_fluid(
   )
 )
 
-server <- function(input, output, session) {
-  log_info("[event=session_start]")
-  onStop(\() log_info("[event=session_end]"))
+server <- function(input, output) {
+  # Start telemetry server and track input values
+  telemetry$start_session(track_values = TRUE)
 
   output$iris_plot <- renderPlot({
     x_axis <- input$x_axis
     y_axis <- input$y_axis
-
-    log_info("[user={session$user}][event=render_plot]")
-    log_info("[user={session$user}][event=x_axis][value={x_axis}]")
-    log_info("[user={session$user}][event=y_axis][value={y_axis}]")
-    log_info("[user={session$user}][event=plot_type][value={input$plot_type}]")
-    log_info("[user={session$user}][event=point_size][value={input$point_size}]")
-
     if (input$plot_type == "Scatterplot") {
       ggplot(iris, aes_string(x = x_axis, y = y_axis, color = "Species")) +
         geom_point(size = input$point_size) +
@@ -47,11 +42,4 @@ server <- function(input, output, session) {
   })
 }
 
-shinyApp(
-  ui = ui,
-  server = server,
-  onStart = \() {
-    log_info("[event=app_start]")
-    onStop(\() log_info("[event=app_end]"))
-  }
-)
+shinyApp(ui, server)
