@@ -1,0 +1,132 @@
+{
+  "input": {
+    "adjust_data_ui-x-select": "feed",
+    "adjust_data_ui-x_filter-filter_slider": [
+      108,
+      423
+    ],
+    "adjust_data_ui-y-select": "feed",
+    "adjust_data_ui-y_filter-filter_slider": [
+      108,
+      423
+    ],
+    "dataset_dropdown_ui-select": "chickwts"
+  },
+  "output": {
+    "plot1_ui-plot": {
+      "src": "[image data hash: 1bbe79572d2021b508aefb1ff4dad33d]",
+      "width": 323.5,
+      "height": 888,
+      "alt": "Plot object",
+      "coordmap": {
+        "panels": [
+          {
+            "panel": 1,
+            "row": 1,
+            "col": 1,
+            "panel_vars": {
+
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "domain": {
+              "left": 0.4,
+              "right": 6.6,
+              "bottom": 0.4,
+              "top": 6.6,
+              "discrete_limits": {
+                "x": [
+                  "casein",
+                  "horsebean",
+                  "linseed",
+                  "meatmeal",
+                  "soybean",
+                  "sunflower"
+                ],
+                "y": [
+                  "casein",
+                  "horsebean",
+                  "linseed",
+                  "meatmeal",
+                  "soybean",
+                  "sunflower"
+                ]
+              }
+            },
+            "mapping": {
+              "x": "x",
+              "y": "y"
+            },
+            "range": {
+              "left": 129.8582088522715,
+              "right": 636.041095890411,
+              "bottom": 1713.018356346142,
+              "top": 10.95890410958904
+            }
+          }
+        ],
+        "dims": {
+          "width": 647,
+          "height": 1776
+        }
+      }
+    },
+    "plot2_ui-plot": {
+      "src": "[image data hash: be88dd97eeaefb199242051091f8eb6d]",
+      "width": 323.5,
+      "height": 888,
+      "alt": "Plot object",
+      "coordmap": {
+        "panels": [
+          {
+            "panel": 1,
+            "row": 1,
+            "col": 1,
+            "panel_vars": {
+
+            },
+            "log": {
+              "x": null,
+              "y": null
+            },
+            "domain": {
+              "left": 0.4,
+              "right": 6.6,
+              "bottom": -0.7000000000000001,
+              "top": 14.7,
+              "discrete_limits": {
+                "x": [
+                  "casein",
+                  "horsebean",
+                  "linseed",
+                  "meatmeal",
+                  "soybean",
+                  "sunflower"
+                ]
+              }
+            },
+            "mapping": {
+              "y": null,
+              "x": "x"
+            },
+            "range": {
+              "left": 66.25586243198345,
+              "right": 636.0410958904109,
+              "bottom": 1713.018356346142,
+              "top": 10.95890410958904
+            }
+          }
+        ],
+        "dims": {
+          "width": 647,
+          "height": 1776
+        }
+      }
+    }
+  },
+  "export": {
+
+  }
+}
